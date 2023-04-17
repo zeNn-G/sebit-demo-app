@@ -3,6 +3,7 @@ import { Post } from "@/types/endpoint";
 export interface groupedDate {
   day: number;
   month: number;
+  year: number;
   posts: Post[];
 }
 
@@ -11,7 +12,8 @@ export function groupByDate(posts: Post[]): groupedDate[] {
     const date = new Date(post.date);
     const month = date.getMonth() + 1;
     const day = date.getDate();
-    const key = `${month}-${day}`;
+    const year = date.getFullYear();
+    const key = `${day}-${month}-${year}`;
     if (acc[key]) {
       acc[key].push(post);
     } else {
@@ -21,10 +23,11 @@ export function groupByDate(posts: Post[]): groupedDate[] {
   }, {} as { [key: string]: Post[] });
 
   const result = Object.entries(groupedPostsByDate).map(([key, posts]) => {
-    const [monthStr, dayStr] = key.split("-");
+    const [dayStr, monthStr, yearStr] = key.split("-");
     const day = parseInt(dayStr, 10);
     const month = parseInt(monthStr, 10);
-    return { day, month, posts };
+    const year = parseInt(yearStr, 10);
+    return { day, month, year, posts };
   });
 
   return result;

@@ -40,6 +40,7 @@ export default function Home({
   useEffect(() => {
     setTitle(blog.title);
   }, []);
+  console.log(posts);
   return (
     <main className="flex w-full">
       {/* Left */}
@@ -49,6 +50,7 @@ export default function Home({
             key={i}
             day={post.day}
             month={post.month}
+            year={post.year}
             posts={post.posts}
           />
         ))}
