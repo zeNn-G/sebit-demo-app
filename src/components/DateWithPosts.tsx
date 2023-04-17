@@ -1,7 +1,6 @@
 import { Post } from "@/types/endpoint";
 import dayjs from "dayjs";
 import "dayjs/locale/tr";
-import { useEffect } from "react";
 
 import {
   AudioPost,
@@ -52,7 +51,7 @@ const DateWithPosts = ({ day, month, year, posts }: Props) => {
             } else if (post.type === "photo") {
               return <PhotoPost post={post} />;
             } else if (post.type === "link") {
-              return <LinkPost />;
+              return <LinkPost post={post} />;
             } else if (post.type === "quote") {
               return <QuotePost post={post} />;
             } else {

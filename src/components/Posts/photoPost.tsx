@@ -12,7 +12,7 @@ const PhotoPost = ({ post }: Props) => {
     <figure className="max-w-screen-md mx-auto flex flex-col bg-postBg p-5 rounded-lg">
       <div className="flex justify-between items-center">
         <p>Modal</p>
-        <a href={post.url} target="_blank">
+        <a href={post["url-with-slug"]} target="_blank">
           <Icon
             icon="system-uicons:chain"
             className="w-6 h-6 text-purple-400 cursor-pointer"
