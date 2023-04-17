@@ -7,8 +7,6 @@ type Props = {
 };
 
 const LinkPost = ({ post }: Props) => {
-  console.log(post["link-text"]);
-  console.log(post["link-description"]);
   return (
     <figure className="max-w-screen-md mx-auto flex flex-col bg-postBg p-5 rounded-lg">
       <div className="flex justify-between items-center">

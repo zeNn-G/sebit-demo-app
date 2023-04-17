@@ -47,7 +47,7 @@ const DateWithPosts = ({ day, month, year, posts }: Props) => {
             if (post.type === "audio") {
               return <AudioPost />;
             } else if (post.type === "conversation") {
-              return <ConversationPost />;
+              return <ConversationPost post={post} />;
             } else if (post.type === "photo") {
               return <PhotoPost post={post} />;
             } else if (post.type === "link") {
