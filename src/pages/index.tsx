@@ -1,10 +1,10 @@
-import { Root, Tumblelog } from "@/types/endpoint";
+import { Root, Tumblelog, Post } from "@/types/endpoint";
 import { useEffect } from "react";
 
 import { useAtom } from "jotai";
 import { titleAtom } from "@/store/titleAtom";
 
-import { BlogInfo } from "@/components";
+import { BlogInfo, DateWithPosts } from "@/components";
 import { groupByDate } from "@/utils/groupByDate";
 
 export const getServerSideProps = async () => {
@@ -34,9 +34,8 @@ export default function Home({
   posts,
 }: {
   blog: Tumblelog;
-  posts: { [key: string]: typeof posts };
+  posts: Post[];
 }) {
-  console.log(posts);
   const [, setTitle] = useAtom(titleAtom);
   useEffect(() => {
     setTitle(blog.title);
@@ -44,7 +43,16 @@ export default function Home({
   return (
     <main className="flex w-full">
       {/* Left */}
-      <section className="flex-[3]">Left</section>
+      <section className="flex-[3]">
+        {posts.map((post, i) => (
+          <DateWithPosts
+            key={i}
+            day={post.day}
+            month={post.month}
+            posts={post.posts}
+          />
+        ))}
+      </section>
       {/* Right */}
       <section className="flex-[1]">
         <BlogInfo description={blog.description} />
