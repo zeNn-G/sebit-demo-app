@@ -24,6 +24,7 @@ export const getServerSideProps = async () => {
   return {
     props: {
       blog: tumblelog,
+      totalPosts: posts.length,
       posts: groupedPostsByDate,
     },
   };
@@ -32,14 +33,25 @@ export const getServerSideProps = async () => {
 export default function Home({
   blog,
   posts,
+  totalPosts,
 }: {
   blog: Tumblelog;
   posts: Post[];
+  totalPosts: number;
 }) {
   const [, setTitle] = useAtom(titleAtom);
   useEffect(() => {
     setTitle(blog.title);
   }, []);
+
+  const onClick = () => {
+    console.log("clicked");
+  };
+
+  const onClose = () => {
+    console.log("closed");
+  };
+
   return (
     <main className="flex w-full">
       {/* Left */}
@@ -56,7 +68,7 @@ export default function Home({
       </section>
       {/* Right */}
       <section className="flex-[1] lg:flex hidden">
-        <BlogInfo description={blog.description} />
+        <BlogInfo description={blog.description} postTotal={totalPosts} />
       </section>
     </main>
   );
