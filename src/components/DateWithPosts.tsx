@@ -22,10 +22,6 @@ type Props = {
 const DateWithPosts = ({ day, month, year, posts }: Props) => {
   const fullDate = dayjs(`${year}-${month}-${day}`);
 
-  useEffect(() => {
-    console.log(posts);
-  }, []);
-
   const dayOfMonth = fullDate.format("DD");
   const monthName = fullDate.locale("tr").format("MMM");
   const weekdayName = fullDate.locale("tr").format("ddd");
@@ -54,7 +50,7 @@ const DateWithPosts = ({ day, month, year, posts }: Props) => {
             } else if (post.type === "conversation") {
               return <ConversationPost />;
             } else if (post.type === "photo") {
-              return <PhotoPost />;
+              return <PhotoPost post={post} />;
             } else if (post.type === "link") {
               return <LinkPost />;
             } else if (post.type === "quote") {

@@ -12,18 +12,21 @@ const QuoteModal = (props: Props) => {
         icon="material-symbols:new-window"
         onClick={() => setVisible(true)}
         className="w-6 h-6 text-purple-400 cursor-pointer"
-      >
-        Open Modal
-      </Icon>
+      />
       <Modal
         show={visible}
         size="md"
         popup={true}
         onClose={() => setVisible(false)}
+        className="bg-postBg text-postBg"
       >
-        <Modal.Header />
+        <Modal.Header>
+          <div className="bg-postBg">
+            <h1>Modal</h1>
+          </div>
+        </Modal.Header>
         <Modal.Body>
-          <div className="text-center">
+          <div className="bg-postBg">
             <h3 className="mb-5 text-lg font-normal">
               Are you sure you want to delete this product?
             </h3>

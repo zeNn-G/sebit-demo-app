@@ -8,4 +8,10 @@ body {
 
 .source-text > a {
   text-decoration: underline;
+  color: #c084fc;
+}
+
+.photo-caption > p > a {
+  text-decoration: underline;
+  color: #c084fc;
 }

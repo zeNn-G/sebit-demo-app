@@ -11,7 +11,7 @@ const QuotePost = ({ post }: Props) => {
   return (
     <figure className="max-w-screen-md mx-auto flex flex-col bg-postBg p-5 rounded-lg">
       <div className="flex justify-between items-center">
-        <QuoteModal />
+        <p>Modal</p>
         <a href={post.url} target="_blank">
           <Icon
             icon="system-uicons:chain"
