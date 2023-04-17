@@ -1,8 +1,10 @@
 import { Root } from "@/types/endpoint";
-import { useAtom } from "jotai";
 import { useEffect } from "react";
 
+import { useAtom } from "jotai";
 import { titleAtom } from "@/store/titleAtom";
+
+import { BlogInfo } from "@/components";
 
 export const getServerSideProps = async () => {
   const response = await fetch("https://demo.tumblr.com/api/read/json");
@@ -26,5 +28,14 @@ export default function Home({ blog }: { blog: Root }) {
   useEffect(() => {
     setTitle(blog.tumblelog.title);
   }, []);
-  return <main>main</main>;
+  return (
+    <main className="flex w-full">
+      {/* Left */}
+      <section className="flex-[3]">Left</section>
+      {/* Right */}
+      <section className="flex-[1]">
+        <BlogInfo description={blog.tumblelog.description} />
+      </section>
+    </main>
+  );
 }
