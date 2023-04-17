@@ -1,7 +1,7 @@
 type Props = {};
 
-const photoPost = (props: Props) => {
-  return <div>photoPost</div>;
+const PhotoPost = (props: Props) => {
+  return <div>PhotoPost</div>;
 };
 
-export default photoPost;
+export default PhotoPost;

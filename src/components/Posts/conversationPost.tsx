@@ -1,7 +1,7 @@
 type Props = {};
 
-const conversationPost = (props: Props) => {
-  return <div>conversationPost</div>;
+const ConversationPost = (props: Props) => {
+  return <div>ConversationPost</div>;
 };
 
-export default conversationPost;
+export default ConversationPost;

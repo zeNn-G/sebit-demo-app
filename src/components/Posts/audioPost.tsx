@@ -1,7 +1,7 @@
 type Props = {};
 
-const audioPost = (props: Props) => {
-  return <div>audioPost</div>;
+const AudioPost = (props: Props) => {
+  return <div>AudioPost</div>;
 };
 
-export default audioPost;
+export default AudioPost;

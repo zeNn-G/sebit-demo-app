@@ -1,7 +1,7 @@
 type Props = {};
 
-const regularPost = (props: Props) => {
-  return <div>regularPost</div>;
+const RegularPost = (props: Props) => {
+  return <div>RegularPost</div>;
 };
 
-export default regularPost;
+export default RegularPost;

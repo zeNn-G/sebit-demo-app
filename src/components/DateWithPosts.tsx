@@ -3,6 +3,15 @@ import dayjs from "dayjs";
 import "dayjs/locale/tr";
 import { useEffect } from "react";
 
+import {
+  AudioPost,
+  ConversationPost,
+  LinkPost,
+  PhotoPost,
+  QuotePost,
+  RegularPost,
+} from "@/components/Posts";
+
 type Props = {
   day: number;
   month: number;
@@ -37,7 +46,23 @@ const DateWithPosts = ({ day, month, year, posts }: Props) => {
           <p className="text-xs lg:text-sm font-bold">{monthName}</p>
         </div>
       </div>
-      <div className="mt-5"></div>
+      <div className="mt-5">
+        {posts.map((post, i) => {
+          if (post.type === "audio") {
+            return <AudioPost />;
+          } else if (post.type === "conversation") {
+            return <ConversationPost />;
+          } else if (post.type === "photo") {
+            return <PhotoPost />;
+          } else if (post.type === "link") {
+            return <LinkPost />;
+          } else if (post.type === "quote") {
+            return <QuotePost post={post} />;
+          } else {
+            return <RegularPost />;
+          }
+        })}
+      </div>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 type Props = {};
 
-const linkPost = (props: Props) => {
+const LinkPost = (props: Props) => {
   return <div>linkPost</div>;
 };
 
-export default linkPost;
+export default LinkPost;

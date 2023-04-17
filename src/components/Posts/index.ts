@@ -1,15 +1,15 @@
-import audioPost from "./audioPost";
-import conversationPost from "./conversationPost";
-import linkPost from "./linkPost";
-import photoPost from "./photoPost";
-import quotePost from "./quotePost";
-import regularPost from "./regularPost";
+import AudioPost from "./AudioPost";
+import ConversationPost from "./ConversationPost";
+import LinkPost from "./LinkPost";
+import PhotoPost from "./PhotoPost";
+import QuotePost from "./QuotePost";
+import RegularPost from "./RegularPost";
 
 export {
-  audioPost,
-  conversationPost,
-  linkPost,
-  photoPost,
-  quotePost,
-  regularPost,
+  AudioPost,
+  ConversationPost,
+  LinkPost,
+  PhotoPost,
+  QuotePost,
+  RegularPost,
 };
