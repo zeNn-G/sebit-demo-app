@@ -40,7 +40,6 @@ export default function Home({
   useEffect(() => {
     setTitle(blog.title);
   }, []);
-  console.log(posts);
   return (
     <main className="flex w-full">
       {/* Left */}
@@ -56,7 +55,7 @@ export default function Home({
         ))}
       </section>
       {/* Right */}
-      <section className="flex-[1]">
+      <section className="flex-[1] lg:flex hidden">
         <BlogInfo description={blog.description} />
       </section>
     </main>
