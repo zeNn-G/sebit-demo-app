@@ -20,7 +20,7 @@ const QuoteModal = ({ quoteSource, quoteText }: Props) => {
             htmlFor="quoteModal"
             className="btn btn-sm btn-circle absolute right-2 top-2"
           >
-            <Icon icon="ic:sharp-close" className="w-6 h-6" />
+            <Icon icon="ic:sharp-close" className="lg:w-6 lg:h-6 w-5 h-5" />
           </label>
           <h3 className="text-lg font-bold">
             <Icon

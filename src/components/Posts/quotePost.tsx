@@ -22,7 +22,7 @@ const QuotePost = ({ post }: Props) => {
           />
         </a>
       </div>
-      <div className="text-center">
+      <div className="text-center lg:mt-2 mt-5">
         <Icon
           icon="material-symbols:format-quote"
           className="w-12 h-12 mx-auto mb-3 text-gray-400"

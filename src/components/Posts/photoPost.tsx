@@ -23,14 +23,14 @@ const PhotoPost = ({ post }: Props) => {
           />
         </a>
       </div>
-      <div className="mt-2">
+      <div className="lg:mt-2 mt-5">
         <a href={post["photo-url-1280"]} target="_blank">
           <Image
             src={post["photo-url-1280"]!}
             alt={post["photo-caption"]!}
             width={1280}
             height={720}
-            className="rounded-xl"
+            className="lg:rounded-xl rounded-lg"
           />
         </a>
         <figcaption className="flex mt-6 text-white photo-caption">
