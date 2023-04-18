@@ -9,7 +9,7 @@ type Props = {
 const QuoteModal = ({ quoteSource, quoteText }: Props) => {
   return (
     <>
-      <label htmlFor="quoteModal" className="btn">
+      <label htmlFor="quoteModal" className="btn btn-sm lg:btn-md">
         Quick preview
       </label>
 

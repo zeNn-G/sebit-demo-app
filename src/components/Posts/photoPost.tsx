@@ -2,6 +2,7 @@ import { Post } from "@/types/endpoint";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import parse from "html-react-parser";
+import { PhotoModal } from "../Modals";
 
 type Props = {
   post: Post;
@@ -11,7 +12,10 @@ const PhotoPost = ({ post }: Props) => {
   return (
     <figure className="max-w-screen-md mx-auto flex flex-col bg-postBg p-5 rounded-lg">
       <div className="flex justify-between items-center">
-        <p>Modal</p>
+        <PhotoModal
+          imageUrl={post["photo-url-1280"]!}
+          caption={post["photo-caption"]!}
+        />
         <a href={post["url-with-slug"]} target="_blank">
           <Icon
             icon="system-uicons:chain"
