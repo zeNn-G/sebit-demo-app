@@ -12,7 +12,7 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-##Used Technologies
+## Used Technologies
 
 - Nextjs | Typescript
 - TailwindCSS | DaisyUI
