@@ -27,7 +27,7 @@ const LinkPost = ({ post }: Props) => {
           />
         </a>
       </div>
-      <div className="mt-2">
+      <div className="lg:mt-2 mt-5">
         <a href={post["link-url"]} target="_blank">
           <p className="text-xl text-purple-400 underline">
             {post["link-text"]}

@@ -11,3 +11,8 @@
   text-decoration: underline;
   color: #c084fc;
 }
+
+.audio-caption > p > strong > a {
+  text-decoration: underline;
+  color: #c084fc;
+}

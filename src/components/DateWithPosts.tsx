@@ -45,7 +45,7 @@ const DateWithPosts = ({ day, month, year, posts }: Props) => {
         <div className="flex flex-col gap-10">
           {posts.map((post, i) => {
             if (post.type === "audio") {
-              return <AudioPost />;
+              return <AudioPost post={post} />;
             } else if (post.type === "conversation") {
               return <ConversationPost post={post} />;
             } else if (post.type === "photo") {
