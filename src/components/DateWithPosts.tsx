@@ -2,6 +2,14 @@ import { Post } from "@/types/endpoint";
 import dayjs from "dayjs";
 import "dayjs/locale/tr";
 
+import { Nunito } from "next/font/google";
+
+const nunito = Nunito({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
+
 import {
   AudioPost,
   ConversationPost,
@@ -28,7 +36,9 @@ const DateWithPosts = ({ day, month, year, posts }: Props) => {
 
   return (
     <div className="flex flex-col mb-10">
-      <div className="flex items-center justify-between bg-base-300 lg:p-2 p-1.5 rounded-xl">
+      <div
+        className={`flex items-center justify-between bg-base-300 lg:p-2 p-1.5 rounded-xl ${nunito.className}`}
+      >
         <div className="flex flex-row items-center bg-primary rounded-xl">
           <p
             className="text-white rotate-180 text-xl lg:text-2xl font-bold p-1.5"

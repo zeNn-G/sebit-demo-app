@@ -9,10 +9,12 @@ type Props = {
 const BlogInfo = ({ description, postTotal }: Props) => {
   const [title] = useAtom(titleAtom);
   return (
-    <div className="p-4 rounded-xl bg-slate-500/10 h-fit">
-      <h1 className="text-xl font-bold text-gray-500 mb-2">About {title}</h1>
+    <div className="p-4 rounded-xl h-fit mb-5 mt-2 lg:mb-0 lg:mt-0">
+      <h1 className="text-xl font-bold mb-2 text-primary">About {title}</h1>
       <p className="text-slate-100">{description}</p>
-      <p className="text-purple-400 mt-2">Post Count : {postTotal} </p>
+      <p className="text-purple-400 mt-2 font-semibold">
+        Post Count : {postTotal}{" "}
+      </p>
     </div>
   );
 };

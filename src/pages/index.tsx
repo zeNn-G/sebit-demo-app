@@ -43,9 +43,9 @@ export default function Home({ blog, posts, totalPosts }: Props) {
   }, []);
 
   return (
-    <main className="flex w-full">
+    <main className="flex w-full lg:flex-row flex-col-reverse">
       {/* Left */}
-      <section className="flex-[3] mr-2">
+      <section className="lg:flex-[3] flex flex-col mr-2">
         {posts.map((post, i) => (
           <DateWithPosts
             key={i}
@@ -57,7 +57,7 @@ export default function Home({ blog, posts, totalPosts }: Props) {
         ))}
       </section>
       {/* Right */}
-      <section className="flex-[1] lg:flex hidden">
+      <section className="flex-[1]">
         <BlogInfo description={blog.description} postTotal={totalPosts} />
       </section>
     </main>
