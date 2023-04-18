@@ -1,5 +1,7 @@
 import { Post } from "@/types/endpoint";
 import { Icon } from "@iconify/react";
+import { ConversationModal } from "../Modals";
+
 type Props = {
   post: Post;
 };
@@ -10,8 +12,15 @@ const ConversationPost = ({ post }: Props) => {
   return (
     <figure className="max-w-screen-md mx-auto flex flex-col bg-postBg p-5 rounded-lg w-full">
       <div className="flex justify-between items-center">
-        <p>Modal</p>
-        <a href={post["url-with-slug"]} target="_blank">
+        <ConversationModal
+          conversation={conversation!}
+          title={post["conversation-title"]}
+        />
+        <a
+          href={post["url-with-slug"]}
+          target="_blank"
+          className="btn btn-circle"
+        >
           <Icon
             icon="system-uicons:chain"
             className="w-6 h-6 text-purple-400 cursor-pointer"
@@ -27,13 +36,13 @@ const ConversationPost = ({ post }: Props) => {
             {conversation!.map(({ label, phrase }, index) => (
               <li
                 key={index}
-                className="odd:bg-purple-400/20 even:bg-purple-400/10 p-2 rounded-lg mb-2"
+                className="odd:bg-primary/20 even:bg-accent/10 p-2 rounded-lg mb-2"
               >
                 <div className="flex items-center">
                   <span className="text-white">
                     <span
                       className={`${
-                        index % 2 !== 0 ? "text-[#84fc8d]" : "text-[#ff8c8c]"
+                        index % 2 !== 0 ? "text-primary" : "text-accent"
                       } mr-2`}
                     >
                       {label}
