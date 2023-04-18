@@ -24,24 +24,31 @@ const DateWithPosts = ({ day, month, year, posts }: Props) => {
   const dayOfMonth = fullDate.format("DD");
   const monthName = fullDate.locale("tr").format("MMM");
   const weekdayName = fullDate.locale("tr").format("ddd");
+  const yearName = fullDate.format("YYYY");
 
   return (
     <div className="flex flex-col mb-10">
-      <div className="flex items-center bg-gradient-to-r from-pink-300 via-purple-300/80 to-transparent lg:w-1/3">
-        <p
-          className="text-white rotate-180 text-xl lg:text-2xl font-bold"
-          style={{
-            writingMode: "vertical-rl",
-          }}
-        >
-          {weekdayName}
-        </p>
-        <div className="p-3 flex flex-col items-center ">
-          <p className="text-xl lg:text-2xl font-bold">{dayOfMonth}</p>
-          <p className="text-xs lg:text-sm font-bold">{monthName}</p>
+      <div className="flex items-center justify-between bg-base-300 lg:p-2 p-1.5 rounded-xl">
+        <div className="flex flex-row items-center bg-primary rounded-xl">
+          <p
+            className="text-white rotate-180 text-xl lg:text-2xl font-bold p-1.5"
+            style={{
+              writingMode: "vertical-rl",
+            }}
+          >
+            {weekdayName}
+          </p>
+          <div className="p-1.5 flex flex-col items-center justify-center">
+            <p className="text-xl lg:text-2xl font-bold">{dayOfMonth}</p>
+            <p className="text-xs lg:text-sm font-bold">{monthName}</p>
+          </div>
+        </div>
+        <div className="rounded-xl">
+          <p className="text-lg lg:text-xl font-bold">{yearName}</p>
         </div>
       </div>
-      <div className="mt-5">
+      <div className="mt-5 flex">
+        <div className="hidden lg:flex divider divider-horizontal w-fit bg-gradient-to-b from-pink-300 via-purple-300 to-indigo-400" />
         <div className="flex flex-col gap-10">
           {posts.map((post, i) => {
             if (post.type === "audio") {

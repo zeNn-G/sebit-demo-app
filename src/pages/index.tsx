@@ -5,7 +5,7 @@ import { useAtom } from "jotai";
 import { titleAtom } from "@/store/titleAtom";
 
 import { BlogInfo, DateWithPosts } from "@/components";
-import { groupByDate } from "@/utils/groupByDate";
+import { type groupedDate, groupByDate } from "@/utils/groupByDate";
 
 export const getServerSideProps = async () => {
   const response = await fetch("https://demo.tumblr.com/api/read/json");
@@ -30,32 +30,22 @@ export const getServerSideProps = async () => {
   };
 };
 
-export default function Home({
-  blog,
-  posts,
-  totalPosts,
-}: {
+type Props = {
   blog: Tumblelog;
-  posts: Post[];
+  posts: groupedDate[];
   totalPosts: number;
-}) {
+};
+
+export default function Home({ blog, posts, totalPosts }: Props) {
   const [, setTitle] = useAtom(titleAtom);
   useEffect(() => {
     setTitle(blog.title);
   }, []);
 
-  const onClick = () => {
-    console.log("clicked");
-  };
-
-  const onClose = () => {
-    console.log("closed");
-  };
-
   return (
     <main className="flex w-full">
       {/* Left */}
-      <section className="flex-[3]">
+      <section className="flex-[3] mr-2">
         {posts.map((post, i) => (
           <DateWithPosts
             key={i}
