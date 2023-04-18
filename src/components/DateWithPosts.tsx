@@ -45,17 +45,17 @@ const DateWithPosts = ({ day, month, year, posts }: Props) => {
         <div className="flex flex-col gap-10">
           {posts.map((post, i) => {
             if (post.type === "audio") {
-              return <AudioPost post={post} />;
+              return <AudioPost post={post} key={i} />;
             } else if (post.type === "conversation") {
-              return <ConversationPost post={post} />;
+              return <ConversationPost post={post} key={i} />;
             } else if (post.type === "photo") {
-              return <PhotoPost post={post} />;
+              return <PhotoPost post={post} key={i} />;
             } else if (post.type === "link") {
-              return <LinkPost post={post} />;
+              return <LinkPost post={post} key={i} />;
             } else if (post.type === "quote") {
-              return <QuotePost post={post} />;
+              return <QuotePost post={post} key={i} />;
             } else {
-              return <RegularPost />;
+              return <RegularPost post={post} key={i} />;
             }
           })}
         </div>

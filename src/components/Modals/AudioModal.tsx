@@ -1,6 +1,5 @@
 import { Icon } from "@iconify/react";
 import parse from "html-react-parser";
-import React from "react";
 
 type Props = {
   src: string;
