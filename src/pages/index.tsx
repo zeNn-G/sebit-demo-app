@@ -6,6 +6,7 @@ import { titleAtom } from "@/store/titleAtom";
 
 import { BlogInfo, DateWithPosts } from "@/components";
 import { type groupedDate, groupByDate } from "@/utils/groupByDate";
+import { SearchBar } from "@/components/";
 
 export const getServerSideProps = async () => {
   const response = await fetch("https://demo.tumblr.com/api/read/json");
@@ -60,6 +61,9 @@ export default function Home({ blog, posts, totalPosts }: Props) {
       <section className="flex-[1]">
         <BlogInfo description={blog.description} postTotal={totalPosts} />
       </section>
+      <div className="lg:hidden">
+        <SearchBar />
+      </div>
     </main>
   );
 }
