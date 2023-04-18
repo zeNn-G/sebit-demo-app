@@ -16,7 +16,11 @@ const PhotoPost = ({ post }: Props) => {
           imageUrl={post["photo-url-1280"]!}
           caption={post["photo-caption"]!}
         />
-        <a href={post["url-with-slug"]} target="_blank">
+        <a
+          href={post["url-with-slug"]}
+          target="_blank"
+          className="btn btn-circle"
+        >
           <Icon
             icon="system-uicons:chain"
             className="w-6 h-6 text-purple-400 cursor-pointer"
