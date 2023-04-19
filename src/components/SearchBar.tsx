@@ -9,7 +9,6 @@ const SearchBar = (props: Props) => {
     <label className="relative block ">
       <input
         className="input input-bordered input-md w-full"
-        name="q"
         type="text"
         value={search}
         placeholder="No Logic"

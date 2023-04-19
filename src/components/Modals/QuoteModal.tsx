@@ -4,9 +4,10 @@ import { Icon } from "@iconify/react";
 type Props = {
   quoteText: string;
   quoteSource: string;
+  tags?: string[];
 };
 
-const QuoteModal = ({ quoteSource, quoteText }: Props) => {
+const QuoteModal = ({ quoteSource, quoteText, tags }: Props) => {
   return (
     <>
       <label htmlFor="quoteModal" className="btn btn-sm lg:btn-md">
@@ -34,6 +35,18 @@ const QuoteModal = ({ quoteSource, quoteText }: Props) => {
           <div className="flex items-center justify-center mt-6 ">
             <p className="text-white source-text">{parse(`${quoteSource}`)}</p>
           </div>
+          {tags?.length ? (
+            <div className="hidden lg:flex justify-end mt-3 gap-2">
+              {tags!.map((tag, i) => (
+                <div
+                  key={i}
+                  className="p-1.5 bg-accent rounded-xl text-black text-sm"
+                >
+                  #{tag}
+                </div>
+              ))}
+            </div>
+          ) : null}
         </div>
       </div>
     </>

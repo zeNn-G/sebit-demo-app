@@ -4,9 +4,10 @@ import parse from "html-react-parser";
 type Props = {
   src: string;
   caption: string;
+  tags?: string[];
 };
 
-const AudioModal = ({ caption, src }: Props) => {
+const AudioModal = ({ caption, src, tags }: Props) => {
   return (
     <>
       <label htmlFor="audioModal" className="btn btn-sm lg:btn-md">
@@ -32,6 +33,18 @@ const AudioModal = ({ caption, src }: Props) => {
           </div>
           <div className="mt-6 audio-caption">{parse(`${caption}`)}</div>
         </div>
+        {tags?.length ? (
+          <div className="hidden lg:flex justify-end mt-3 gap-2">
+            {tags!.map((tag, i) => (
+              <div
+                key={i}
+                className="p-1.5 bg-accent rounded-xl text-black text-sm"
+              >
+                #{tag}
+              </div>
+            ))}
+          </div>
+        ) : null}
       </div>
     </>
   );

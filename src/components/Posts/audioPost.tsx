@@ -14,7 +14,11 @@ const AudioPost = ({ post }: Props) => {
   return (
     <figure className="max-w-screen-md mx-auto flex flex-col bg-postBg p-5 rounded-lg w-full">
       <div className="flex justify-between items-center">
-        <AudioModal src={iframeSrc!} caption={post["audio-caption"]!} />
+        <AudioModal
+          src={iframeSrc!}
+          caption={post["audio-caption"]!}
+          tags={post.tags}
+        />
         <a
           href={post["url-with-slug"]}
           target="_blank"
@@ -37,6 +41,18 @@ const AudioPost = ({ post }: Props) => {
       <div className="mt-6 audio-caption">
         {parse(`${post["audio-caption"]}`)}
       </div>
+      {post.tags?.length ? (
+        <div className="hidden lg:flex justify-end mt-3 gap-2">
+          {post.tags!.map((tag, i) => (
+            <div
+              key={i}
+              className="p-1.5 bg-accent rounded-xl text-black text-sm"
+            >
+              #{tag}
+            </div>
+          ))}
+        </div>
+      ) : null}
     </figure>
   );
 };

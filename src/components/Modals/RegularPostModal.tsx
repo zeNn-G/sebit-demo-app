@@ -4,9 +4,10 @@ import parse from "html-react-parser";
 type Props = {
   title: string;
   body: string;
+  tags?: string[];
 };
 
-const RegularPostModal = ({ title, body }: Props) => {
+const RegularPostModal = ({ title, body, tags }: Props) => {
   return (
     <>
       <label
@@ -32,6 +33,18 @@ const RegularPostModal = ({ title, body }: Props) => {
           <h3 className="text-lg font-bold">{title}</h3>
           <div className="mt-8 regular-body">{parse(`${body}`)}</div>
         </div>
+        {tags?.length ? (
+          <div className="hidden lg:flex justify-end mt-3 gap-2">
+            {tags!.map((tag, i) => (
+              <div
+                key={i}
+                className="p-1.5 bg-accent rounded-xl text-black text-sm"
+              >
+                #{tag}
+              </div>
+            ))}
+          </div>
+        ) : null}
       </div>
     </>
   );

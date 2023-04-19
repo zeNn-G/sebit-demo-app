@@ -15,6 +15,7 @@ const ConversationPost = ({ post }: Props) => {
         <ConversationModal
           conversation={conversation!}
           title={post["conversation-title"]}
+          tags={post.tags}
         />
         <a
           href={post["url-with-slug"]}
@@ -55,6 +56,18 @@ const ConversationPost = ({ post }: Props) => {
           </ul>
         </figcaption>
       </div>
+      {post.tags?.length ? (
+        <div className="hidden lg:flex justify-end mt-3 gap-2">
+          {post.tags!.map((tag, i) => (
+            <div
+              key={i}
+              className="p-1.5 bg-accent rounded-xl text-black text-sm"
+            >
+              #{tag}
+            </div>
+          ))}
+        </div>
+      ) : null}
     </figure>
   );
 };

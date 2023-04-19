@@ -14,6 +14,7 @@ const QuotePost = ({ post }: Props) => {
         <QuoteModal
           quoteText={post["quote-text"]!}
           quoteSource={post["quote-source"]!}
+          tags={post.tags}
         />
         <a
           href={post["url-with-slug"]}
@@ -43,6 +44,18 @@ const QuotePost = ({ post }: Props) => {
           </p>
         </figcaption>
       </div>
+      {post.tags?.length ? (
+        <div className="hidden lg:flex justify-end mt-3 gap-2">
+          {post.tags!.map((tag, i) => (
+            <div
+              key={i}
+              className="p-1.5 bg-accent rounded-xl text-black text-sm"
+            >
+              #{tag}
+            </div>
+          ))}
+        </div>
+      ) : null}
     </figure>
   );
 };

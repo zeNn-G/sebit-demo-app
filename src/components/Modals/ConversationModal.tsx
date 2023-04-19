@@ -4,9 +4,10 @@ import { Conversation } from "@/types/endpoint";
 type Props = {
   conversation: Conversation[];
   title: string;
+  tags?: string[];
 };
 
-const ConversationModal = ({ conversation, title }: Props) => {
+const ConversationModal = ({ conversation, title, tags }: Props) => {
   return (
     <>
       <label htmlFor="conversationModal" className="btn btn-sm lg:btn-md">
@@ -47,6 +48,18 @@ const ConversationModal = ({ conversation, title }: Props) => {
               ))}
             </ul>
           </div>
+          {tags?.length ? (
+            <div className="hidden lg:flex justify-end mt-3 gap-2">
+              {tags!.map((tag, i) => (
+                <div
+                  key={i}
+                  className="p-1.5 bg-accent rounded-xl text-black text-sm"
+                >
+                  #{tag}
+                </div>
+              ))}
+            </div>
+          ) : null}
         </div>
       </div>
     </>
