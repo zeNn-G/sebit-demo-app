@@ -1,12 +1,16 @@
-import { Root, Tumblelog, Post } from "@/types/endpoint";
+import { Tumblelog } from "@/types/endpoint";
 import { useEffect } from "react";
 
 import { useAtom } from "jotai";
 import { titleAtom } from "@/store/titleAtom";
 
 import { BlogInfo, DateWithPosts } from "@/components";
-import { type groupedDate, groupByDate } from "@/utils/groupByDate";
 import { SearchBar } from "@/components/";
+
+import { type groupedDate, groupByDate } from "@/utils/groupByDate";
+
+import { textToJson } from "@/utils/textToJson";
+
 import Head from "next/head";
 
 export const getServerSideProps = async () => {
@@ -14,10 +18,7 @@ export const getServerSideProps = async () => {
 
   //! conversion of var tumblr_api_read to JSON
   const text = await response.text();
-  const jsonStart = text.indexOf("{");
-  const jsonEnd = text.lastIndexOf("}");
-  const jsonString = text.substring(jsonStart, jsonEnd + 1);
-  const tumblr_api_read = JSON.parse(jsonString) as Root;
+  const tumblr_api_read = textToJson(text);
 
   const { tumblelog, posts } = tumblr_api_read;
 

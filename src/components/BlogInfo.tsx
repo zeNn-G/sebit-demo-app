@@ -15,6 +15,7 @@ const BlogInfo = ({ description, postTotal }: Props) => {
       <p className="text-purple-400 mt-2 font-semibold">
         Post Count : {postTotal}{" "}
       </p>
+      <div className="btn w-full mt-3">Archive</div>
     </div>
   );
 };
