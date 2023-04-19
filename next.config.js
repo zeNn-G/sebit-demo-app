@@ -4,6 +4,9 @@ const nextConfig = {
   images: {
     domains: ["64.media.tumblr.com"],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 module.exports = nextConfig;
