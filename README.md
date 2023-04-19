@@ -5,10 +5,13 @@ Deployed Version: https://sebit-demo-app.vercel.app/
 To run locally:
 
 ```bash
+npm install
 npm run dev
 # or
+yarn install
 yarn dev
 # or
+pnpm install
 pnpm dev
 ```
 
