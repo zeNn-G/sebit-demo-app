@@ -18,6 +18,7 @@ const AudioPost = ({ post }: Props) => {
           src={iframeSrc!}
           caption={post["audio-caption"]!}
           tags={post.tags}
+          id={post.id}
         />
         <a
           href={post["url-with-slug"]}

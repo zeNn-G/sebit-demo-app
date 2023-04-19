@@ -5,20 +5,28 @@ type Props = {
   conversation: Conversation[];
   title: string;
   tags?: string[];
+  id: string;
 };
 
-const ConversationModal = ({ conversation, title, tags }: Props) => {
+const ConversationModal = ({ conversation, title, tags, id }: Props) => {
   return (
     <>
-      <label htmlFor="conversationModal" className="btn btn-sm lg:btn-md">
+      <label
+        htmlFor={`conversationModal-${id}`}
+        className="btn btn-sm lg:btn-md"
+      >
         Quick preview
       </label>
 
-      <input type="checkbox" id="conversationModal" className="modal-toggle" />
+      <input
+        type="checkbox"
+        id={`conversationModal-${id}`}
+        className="modal-toggle"
+      />
       <div className="modal">
         <div className="modal-box relative">
           <label
-            htmlFor="conversationModal"
+            htmlFor={`conversationModal-${id}`}
             className="btn btn-sm btn-circle absolute right-2 top-2"
           >
             <Icon icon="ic:sharp-close" className="lg:w-6 lg:h-6 w-5 h-5" />

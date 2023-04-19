@@ -6,20 +6,21 @@ type Props = {
   linkDesc: string;
   linkText: string;
   tags?: string[];
+  id: string;
 };
 
-const LinkModal = ({ linkUrl, linkDesc, linkText, tags }: Props) => {
+const LinkModal = ({ linkUrl, linkDesc, linkText, tags, id }: Props) => {
   return (
     <>
-      <label htmlFor="linkModal" className="btn btn-sm lg:btn-md">
+      <label htmlFor={`linkModal-${id}`} className="btn btn-sm lg:btn-md">
         Quick preview
       </label>
 
-      <input type="checkbox" id="linkModal" className="modal-toggle" />
+      <input type="checkbox" id={`linkModal-${id}`} className="modal-toggle" />
       <div className="modal">
         <div className="modal-box relative">
           <label
-            htmlFor="linkModal"
+            htmlFor={`linkModal-${id}`}
             className="btn btn-sm btn-circle absolute right-2 top-2"
           >
             <Icon icon="ic:sharp-close" className="lg:w-6 lg:h-6 w-5 h-5" />

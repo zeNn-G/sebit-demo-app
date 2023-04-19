@@ -16,6 +16,7 @@ const ConversationPost = ({ post }: Props) => {
           conversation={conversation!}
           title={post["conversation-title"]}
           tags={post.tags}
+          id={post.id}
         />
         <a
           href={post["url-with-slug"]}

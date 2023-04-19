@@ -16,6 +16,7 @@ const PhotoPost = ({ post }: Props) => {
           imageUrl={post["photo-url-1280"]!}
           caption={post["photo-caption"]!}
           tags={post.tags}
+          id={post.id}
         />
         <a
           href={post["url-with-slug"]}

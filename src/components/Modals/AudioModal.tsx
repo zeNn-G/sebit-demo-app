@@ -5,20 +5,21 @@ type Props = {
   src: string;
   caption: string;
   tags?: string[];
+  id: string;
 };
 
-const AudioModal = ({ caption, src, tags }: Props) => {
+const AudioModal = ({ caption, src, tags, id }: Props) => {
   return (
     <>
-      <label htmlFor="audioModal" className="btn btn-sm lg:btn-md">
+      <label htmlFor={`audioModal-${id}`} className="btn btn-sm lg:btn-md">
         Quick preview
       </label>
 
-      <input type="checkbox" id="audioModal" className="modal-toggle" />
+      <input type="checkbox" id={`audioModal-${id}`} className="modal-toggle" />
       <div className="modal">
         <div className="modal-box relative">
           <label
-            htmlFor="audioModal"
+            htmlFor={`audioModal-${id}`}
             className="btn btn-sm btn-circle absolute right-2 top-2"
           >
             <Icon icon="ic:sharp-close" className="lg:w-6 lg:h-6 w-5 h-5" />

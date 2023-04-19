@@ -5,20 +5,21 @@ type Props = {
   quoteText: string;
   quoteSource: string;
   tags?: string[];
+  id: string;
 };
 
-const QuoteModal = ({ quoteSource, quoteText, tags }: Props) => {
+const QuoteModal = ({ quoteSource, quoteText, tags, id }: Props) => {
   return (
     <>
-      <label htmlFor="quoteModal" className="btn btn-sm lg:btn-md">
+      <label htmlFor={`quoteModal-${id}`} className="btn btn-sm lg:btn-md">
         Quick preview
       </label>
 
-      <input type="checkbox" id="quoteModal" className="modal-toggle" />
+      <input type="checkbox" id={`quoteModal-${id}`} className="modal-toggle" />
       <div className="modal">
         <div className="modal-box relative">
           <label
-            htmlFor="quoteModal"
+            htmlFor={`quoteModal-${id}`}
             className="btn btn-sm btn-circle absolute right-2 top-2"
           >
             <Icon icon="ic:sharp-close" className="lg:w-6 lg:h-6 w-5 h-5" />

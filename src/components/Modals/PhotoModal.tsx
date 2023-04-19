@@ -6,20 +6,21 @@ type Props = {
   imageUrl: string;
   caption: string;
   tags?: string[];
+  id: string;
 };
 
-const PhotoModal = ({ imageUrl, caption, tags }: Props) => {
+const PhotoModal = ({ imageUrl, caption, tags, id }: Props) => {
   return (
     <>
-      <label htmlFor="photoModal" className="btn btn-sm lg:btn-md">
+      <label htmlFor={`photoModal-${id}`} className="btn btn-sm lg:btn-md">
         Quick preview
       </label>
 
-      <input type="checkbox" id="photoModal" className="modal-toggle" />
+      <input type="checkbox" id={`photoModal-${id}`} className="modal-toggle" />
       <div className="modal">
         <div className="modal-box relative w-11/12 max-w-5xl">
           <label
-            htmlFor="photoModal"
+            htmlFor={`photoModal-${id}`}
             className="btn btn-sm btn-circle absolute right-2 top-2"
           >
             <Icon icon="ic:sharp-close" className="lg:w-6 lg:h-6 w-5 h-5" />

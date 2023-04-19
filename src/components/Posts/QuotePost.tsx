@@ -15,6 +15,7 @@ const QuotePost = ({ post }: Props) => {
           quoteText={post["quote-text"]!}
           quoteSource={post["quote-source"]!}
           tags={post.tags}
+          id={post.id}
         />
         <a
           href={post["url-with-slug"]}

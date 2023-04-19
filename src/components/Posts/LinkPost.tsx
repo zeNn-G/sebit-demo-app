@@ -16,6 +16,7 @@ const LinkPost = ({ post }: Props) => {
           linkDesc={post["link-description"]!}
           linkText={post["link-text"]!}
           tags={post.tags!}
+          id={post.id}
         />
         <a
           href={post["url-with-slug"]}

@@ -15,6 +15,7 @@ const RegularPost = ({ post }: Props) => {
           title={post["regular-title"]!}
           body={post["regular-body"]!}
           tags={post.tags}
+          id={post.id}
         />
         <a
           href={post["url-with-slug"]}

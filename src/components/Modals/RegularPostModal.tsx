@@ -5,27 +5,25 @@ type Props = {
   title: string;
   body: string;
   tags?: string[];
+  id: string;
 };
 
-const RegularPostModal = ({ title, body, tags }: Props) => {
+const RegularPostModal = ({ title, body, tags, id }: Props) => {
   return (
     <>
-      <label
-        htmlFor={`${title}-regularPostModal`}
-        className="btn btn-sm lg:btn-md"
-      >
+      <label htmlFor={`regularPost-${id}`} className="btn btn-sm lg:btn-md">
         Quick preview
       </label>
 
       <input
         type="checkbox"
-        id={`${title}-regularPostModal`}
+        id={`regularPost-${id}`}
         className="modal-toggle"
       />
       <div className="modal">
         <div className="modal-box relative">
           <label
-            htmlFor={`${title}-regularPostModal`}
+            htmlFor={`regularPost-${id}`}
             className="btn btn-sm btn-circle absolute right-2 top-2"
           >
             <Icon icon="ic:sharp-close" className="lg:w-6 lg:h-6 w-5 h-5" />
