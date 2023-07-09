@@ -1,7 +1,5 @@
 ## Sebit demo tumblr
 
-Deployed Version: https://sebit-demo-app.vercel.app/
-
 To run locally:
 
 ```bash
